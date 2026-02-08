@@ -1,15 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navLinks } from "@/lib/data";
 import { useTheme } from "@/components/ThemeProvider";
+import { useLanguage } from "./LanguageProvider";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
     const { theme, toggleTheme } = useTheme();
+    const { locale, setLocale, t } = useLanguage();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const translatedNavLinks = [
+        { label: t("nav.menu"), href: "/menu" },
+        { label: t("nav.location"), href: "/location" },
+        { label: t("nav.about"), href: "/about" },
+    ];
+
+    const toggleLanguage = () => {
+        setLocale(locale === "en" ? "de" : "en");
+    };
 
     return (
         <header className="fixed top-0 w-full z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-wood-light/30 dark:border-white/5 transition-all duration-300">
@@ -30,7 +46,7 @@ export default function Header() {
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-8">
-                        {navLinks.map((link) => (
+                        {translatedNavLinks.map((link) => (
                             <Link
                                 key={link.label}
                                 href={link.href}
@@ -43,16 +59,22 @@ export default function Header() {
                             </Link>
                         ))}
                         <span className="h-4 w-px bg-wood-light/50 dark:bg-white/10"></span>
-                        <button className="text-sm font-bold text-text-main dark:text-text-on-dark hover:text-primary transition-colors cursor-pointer">
-                            EN
+                        <button
+                            onClick={toggleLanguage}
+                            className={`text-sm font-bold text-text-main dark:text-text-on-dark hover:text-primary transition-colors cursor-pointer uppercase ${mounted ? "opacity-100" : "opacity-0"}`}
+                        >
+                            {mounted ? locale : "en"}
                         </button>
                     </nav>
 
                     {/* Actions */}
                     <div className="flex items-center gap-3">
-                        <button className="hidden md:flex items-center justify-center h-10 px-5 bg-primary hover:bg-primary-dark text-background-dark font-bold text-sm rounded-lg transition-all shadow-primary hover:shadow-lg active:scale-95 cursor-pointer">
-                            Book a Table
-                        </button>
+                        <Link
+                            href="/book"
+                            className="hidden md:flex items-center justify-center h-10 px-5 bg-primary hover:bg-primary-dark text-background-dark font-bold text-sm rounded-lg transition-all shadow-primary hover:shadow-lg active:scale-95 cursor-pointer"
+                        >
+                            {t("nav.bookTable")}
+                        </Link>
 
                         {/* Theme Toggle */}
                         <button
@@ -61,7 +83,7 @@ export default function Header() {
                             className="p-2 rounded-lg bg-surface-light dark:bg-surface-dark hover:bg-wood-light/50 dark:hover:bg-white/10 text-text-main dark:text-text-on-dark transition-all cursor-pointer border border-wood-light/20 dark:border-white/5"
                         >
                             <span className="material-symbols-outlined text-[20px]">
-                                {theme === "dark" ? "light_mode" : "dark_mode"}
+                                {!mounted ? "dark_mode" : theme === "dark" ? "light_mode" : "dark_mode"}
                             </span>
                         </button>
 
@@ -82,7 +104,15 @@ export default function Header() {
             {/* Mobile Menu Overlay */}
             {isMenuOpen && (
                 <div className="md:hidden absolute top-20 left-0 w-full bg-background-light dark:bg-background-dark border-b border-wood-light/30 dark:border-white/5 p-6 flex flex-col gap-6 shadow-2xl animate-in slide-in-from-top duration-300">
-                    {navLinks.map((link) => (
+                    <div className="flex justify-between items-center px-2">
+                        <button
+                            onClick={toggleLanguage}
+                            className={`text-sm font-bold text-text-main dark:text-text-on-dark hover:text-primary transition-colors cursor-pointer uppercase ${mounted ? "opacity-100" : "opacity-0"}`}
+                        >
+                            {mounted ? locale : "en"}
+                        </button>
+                    </div>
+                    {translatedNavLinks.map((link) => (
                         <Link
                             key={link.label}
                             href={link.href}
@@ -95,9 +125,13 @@ export default function Header() {
                             {link.label}
                         </Link>
                     ))}
-                    <button className="flex items-center justify-center h-12 px-5 bg-primary hover:bg-primary-dark text-background-dark font-bold text-base rounded-xl transition-all shadow-primary active:scale-95 w-full cursor-pointer">
-                        Book a Table
-                    </button>
+                    <Link
+                        href="/book"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="flex items-center justify-center h-12 px-5 bg-primary hover:bg-primary-dark text-background-dark font-bold text-base rounded-xl transition-all shadow-primary active:scale-95 w-full cursor-pointer"
+                    >
+                        {t("nav.bookTable")}
+                    </Link>
                 </div>
             )}
         </header>

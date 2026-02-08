@@ -1,43 +1,37 @@
+"use client";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function PrivacyPage() {
+    const { t } = useLanguage();
+
+    // In a real app, you'd probably have a more complex way to map arrays from translations,
+    // but for 3 fixed sections, we can do it simply.
+    const sections = [0, 1, 2];
+
     return (
         <>
             <Header />
             <main className="pt-20">
-                <Hero
-                    content={{
-                        welcomeTag: "Legal",
-                        titlePart1: "Privacy",
-                        titlePart2: "Policy",
-                        titlePart3: "",
-                        description: "How we handle your data.",
-                        backgroundImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80"
-                    }}
-                    size="medium"
-                />
-                <section className="py-20 px-4 md:px-8 bg-background-light dark:bg-background-dark">
-                    <div className="max-w-[800px] mx-auto prose dark:prose-invert space-y-8">
-                        <div>
-                            <h2 className="text-2xl font-bold mb-4">1. General Information</h2>
-                            <p className="text-text-muted dark:text-gray-400">
-                                This privacy policy informs you about the type, scope, and purpose of the collection and use of personal data by IOKI FU Restaurant. We take your data protection very seriously and treat your personal data confidentially and in accordance with the law.
-                            </p>
-                        </div>
-                        <div>
-                            <h2 className="text-2xl font-bold mb-4">2. Data Collection on our Website</h2>
-                            <p className="text-text-muted dark:text-gray-400">
-                                When you visit our website, certain data is automatically collected, such as your IP address, the date and time of access, and the browser used. This data is used solely for technical administration and security.
-                            </p>
-                        </div>
-                        <div>
-                            <h2 className="text-2xl font-bold mb-4">3. Contact and Reservations</h2>
-                            <p className="text-text-muted dark:text-gray-400">
-                                When you contact us or make a reservation, we store your information to process the inquiry. This data is not passed on to third parties without your consent.
-                            </p>
-                        </div>
+                <Hero contentKey="legal" size="medium" />
+                <section className="py-24 px-4 md:px-8 bg-background-light dark:bg-background-dark">
+                    <div className="max-w-[800px] mx-auto prose dark:prose-invert space-y-12">
+                        <h2 className="text-4xl font-black text-text-main dark:text-text-on-dark mb-12 tracking-tight">
+                            {t("privacy.title")}
+                        </h2>
+                        {sections.map((idx) => (
+                            <div key={idx} className="space-y-4">
+                                <h3 className="text-2xl font-bold text-text-main dark:text-white">
+                                    {t(`privacy.sections.${idx}.title`)}
+                                </h3>
+                                <p className="text-text-muted dark:text-gray-400 leading-relaxed font-medium">
+                                    {t(`privacy.sections.${idx}.content`)}
+                                </p>
+                            </div>
+                        ))}
                     </div>
                 </section>
             </main>

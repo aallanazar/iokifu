@@ -16,8 +16,9 @@ export interface Dish {
 }
 
 export interface OpeningHour {
-    day: string;
-    hours: string;
+    dayKey: string;
+    open: string; // HH:mm
+    close: string; // HH:mm
 }
 
 export interface ContactInfo {
@@ -115,9 +116,9 @@ export const dishes: Dish[] = [
 ];
 
 export const openingHours: OpeningHour[] = [
-    { day: "Mon - Fri", hours: "11:30 - 22:00" },
-    { day: "Saturday", hours: "12:00 - 23:00" },
-    { day: "Sunday", hours: "12:00 - 21:00" },
+    { dayKey: "monFri", open: "11:30", close: "22:00" },
+    { dayKey: "sat", open: "12:00", close: "23:00" },
+    { dayKey: "sun", open: "12:00", close: "21:00" },
 ];
 
 export const contactInfo: ContactInfo = {

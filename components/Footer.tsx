@@ -53,7 +53,7 @@ export default function Footer() {
                             Terms of Service
                         </a>
                     </div>
-                    <p>© 2024 IOKI FU Restaurant. All rights reserved.</p>
+                    <p>© 2026 IOKI FU Restaurant. All rights reserved.</p>
                 </div>
             </div>
         </footer>

@@ -5,12 +5,13 @@ export default function VisitUs() {
         <section className="py-20 px-4 md:px-8 bg-wood-light/20 dark:bg-black/20">
             <div className="max-w-[1280px] mx-auto">
                 <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-text-main dark:text-white">
-                        Visit IOKI FU
+                    <h2 className="text-4xl md:text-4xl font-black text-text-main dark:text-text-on-dark tracking-tight mb-4">
+                        We&apos;d Love to <span className="brush-stroke">See You</span>
                     </h2>
                     <p className="text-text-muted dark:text-gray-400 max-w-xl mx-auto">
-                        Located in the heart of Frankfurt's financial district, offering a
-                        peaceful escape for lunch and dinner.
+                        Located in the heart of Frankfurt&apos;s financial district, offering a
+                        serene escape from the city&apos;s hustle. Experience the art of
+                        Japanese hospitality.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

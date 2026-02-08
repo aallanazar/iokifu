@@ -10,12 +10,13 @@ export default function ChefSpecials() {
             <div className="max-w-[1280px] mx-auto relative z-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                     <div className="space-y-2">
-                        <h2 className="text-3xl md:text-4xl font-extrabold text-text-main dark:text-white">
-                            <span className="brush-stroke">Chef's Specials</span>
+                        <h2 className="text-4xl md:text-5xl font-black text-text-main dark:text-text-on-dark tracking-tight">
+                            Chef&apos;s <span className="brush-stroke">Specials</span>
                         </h2>
                         <p className="text-text-muted dark:text-gray-400 max-w-lg">
                             Curated dishes featuring seasonal ingredients and traditional
-                            techniques passed down through generations.
+                            techniques passed down through generations. Made fresh daily in
+                            our kitchen.
                         </p>
                     </div>
                     <div className="flex gap-2">

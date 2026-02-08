@@ -17,31 +17,41 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme") as Theme | null;
+        const root = document.documentElement;
+
         if (savedTheme) {
             setTheme(savedTheme);
-            document.documentElement.classList.toggle("dark", savedTheme === "dark");
+            if (savedTheme === "dark") {
+                root.classList.add("dark");
+            } else {
+                root.classList.remove("dark");
+            }
         } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
             setTheme("dark");
-            document.documentElement.classList.add("dark");
+            root.classList.add("dark");
         }
         setMounted(true);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const toggleTheme = () => {
+        const root = document.documentElement;
         const newTheme = theme === "light" ? "dark" : "light";
+
         setTheme(newTheme);
         localStorage.setItem("theme", newTheme);
-        document.documentElement.classList.toggle("dark", newTheme === "dark");
-    };
 
-    if (!mounted) {
-        return <>{children}</>;
-    }
+        if (newTheme === "dark") {
+            root.classList.add("dark");
+        } else {
+            root.classList.remove("dark");
+        }
+    };
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
-            {children}
+            <div style={{ visibility: mounted ? "visible" : "hidden" }}>
+                {children}
+            </div>
         </ThemeContext.Provider>
     );
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { openingHours, contactInfo, mapPreview, socialLinks } from "@/lib/data";
+import { openingHours, contactInfo, socialLinks } from "@/lib/data";
 
 export default function VisitUs() {
     return (
@@ -32,18 +32,15 @@ export default function VisitUs() {
                             </p>
                         </div>
                         {/* Mini Map Preview */}
-                        <div className="mt-2 w-full h-32 rounded-lg bg-gray-200 overflow-hidden relative">
-                            <div
-                                className="w-full h-full bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity"
-                                style={{
-                                    backgroundImage: `url('${mapPreview.image}')`,
-                                }}
-                            ></div>
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="material-symbols-outlined text-primary drop-shadow-md text-4xl">
-                                    location_on
-                                </span>
-                            </div>
+                        <div className="mt-2 w-full h-32 rounded-lg bg-gray-200 overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                scrolling="no"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=8.6821%2C50.1118%2C8.6892%2C50.1155&amp;layer=mapnik&amp;marker=50.1136751%2C8.6856916"
+                                className="w-full h-full opacity-80"
+                            ></iframe>
                         </div>
                     </div>
                     {/* Hours Card */}

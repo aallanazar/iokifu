@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-display: 'Manrope', sans-serif;
 
@@ -10,9 +12,7 @@
 
   /* Neutral Palette - Optimized for contrast */
   --color-background-light: #fefefc;
-  /* Extremely high contrast against dark text */
   --color-background-dark: #081109;
-  /* Deep forest dark mode */
 
   --color-surface-light: #f3f4f1;
   --color-surface-dark: #121d13;
@@ -32,6 +32,14 @@
 
   /* Shadows */
   --shadow-primary: 0 10px 30px -10px rgba(19, 236, 55, 0.3);
+}
+
+/* Redefine variables for dark mode manually as fallback for class-based mode */
+.dark {
+  --color-background-light: var(--color-background-dark);
+  --color-surface-light: var(--color-surface-dark);
+  --color-text-main: var(--color-text-on-dark);
+  --color-wood-light: #1a1a1a;
 }
 
 /* Base Overrides for Accessibility */

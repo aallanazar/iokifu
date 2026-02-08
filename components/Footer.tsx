@@ -77,7 +77,7 @@ export default function Footer() {
                     <div className="flex items-center gap-1.5 translate-y-[1px]">
                         <span>{t("footer.developedBy")}</span>
                         <Link
-                            href="https://github.com/allanazar"
+                            href="https://github.com/aallanazar"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-primary hover:text-primary-dark transition-colors font-bold tracking-tight bg-primary/5 px-2 py-0.5 rounded-md border border-primary/10"

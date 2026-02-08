@@ -48,6 +48,7 @@ export const translations = {
             imprint: "Imprint",
             terms: "Terms of Service",
             rights: "All rights reserved.",
+            developedBy: "Developed by",
         },
         specials: {
             title: "Chef's",
@@ -166,6 +167,7 @@ export const translations = {
             imprint: "Impressum",
             terms: "AGB",
             rights: "Alle Rechte vorbehalten.",
+            developedBy: "Entwickelt von",
         },
         specials: {
             title: "Chef's",

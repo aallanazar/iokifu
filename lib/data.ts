@@ -28,10 +28,23 @@ export interface ContactInfo {
     zip: string;
 }
 
+export interface SocialLink {
+    platform: string;
+    href: string;
+    iconUrl: string;
+    label: string;
+}
+
 export const navLinks: NavLink[] = [
     { label: "Menu", href: "/menu" },
     { label: "Location", href: "/location" },
     { label: "About Us", href: "/about" },
+];
+
+export const socialLinks: SocialLink[] = [
+    { platform: "Instagram", href: "https://instagram.com", iconUrl: "/instagram.svg", label: "Instagram" },
+    { platform: "Facebook", href: "https://facebook.com", iconUrl: "/facebook.svg", label: "Facebook" },
+    { platform: "Twitter", href: "https://twitter.com", iconUrl: "/twitter.svg", label: "Twitter" },
 ];
 
 export const heroContent = {
@@ -70,7 +83,7 @@ export const dishes: Dish[] = [
         price: "€16.50",
         category: "Ramen",
         description: "Rich pork broth with customized spicy miso paste, bamboo shoots, and soft-boiled egg.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCEoCptMC7S8nBCrGO_Z9i8nt3KeMqX4rFbxJZUb-VEOYNrBij3tQvvmKPR30aIoA4kMtmA8zI3pIgWpEZRYdIfNSG7-cH-JpzmJVDM56Q5itXFQbiMArNSj5WoqUvzIT_EtAIXO0aoUirw1V6Xr3idRt1PJPTY_NbqwpLeZdL9q8SaX4G9fdFZcadUrBQMtSlTK8wRXzEEe9On627CjOIwyuz4FSI0RjrgawEsRbn6icVt1KMsxbr8-8PeepmzDlZwxshVrTA7om-",
+        image: "/dishes/spicy-miso-ramen.jpg",
         isPopular: true,
         isSpicy: true,
     },
@@ -80,7 +93,7 @@ export const dishes: Dish[] = [
         price: "€18.00",
         category: "Udon",
         description: "Thick hand-pulled wheat noodles in a light dashi broth, served with two pieces of crispy prawn tempura.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA2VSR7JqmFzJnn46fSNAWEtRxi0Quq6y_2quldKpQXpCC3XXkLa3N5EXXe62MJkxWHQG93owzm1GzJWEc2MTr1I9BexkMtxa98VKgc6EVGHM_dqSbdFY4Xa1H0L5kVqtXarb6zx2BN2cztZk6CNUFJJUeYiTa_o5KHaQILBpCb8QOOS_EkWnTUJc3W9lEFi1A3XFyLHqtjfOrRL3i61DIO0mZwM2BDrmRpJn_o_bcpR6vB7wrGxRB-LtIidb4OHI2SXz6orIJ7203F",
+        image: "/dishes/tempura-udon.jpg",
     },
     {
         id: 3,
@@ -88,7 +101,7 @@ export const dishes: Dish[] = [
         price: "€8.50",
         category: "Desserts",
         description: "A Japanese twist on the Italian classic. Layers of matcha-soaked sponge and mascarpone cream.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0X_p6qL7Z9Z917f18Dny0VWqE2fBUGXJouG-e8EByv1CSjoUfZPnCazQ7vJXKK4q7Nx-yrK76upoksX4NQWx6KrZlOKqy-b9G0slxbYXsr4qxjEbPf-a-BQiy1Z7THNd9wVlI8eXk8Ap12d81o2INkAkhxnwA5FUQbigDLP1_1nMzHIuta-2ShK7pH5vL0mSWbVCqeShS6UGEuVdsaPju-XzSm1mSC_xHNlrYLloSdP8XYmvKmo4gwN7zPXLky6gdovmf-WZ0_1l8",
+        image: "/dishes/matcha-tiramisu.jpg",
         isVegetarian: true,
     },
     {
@@ -97,7 +110,7 @@ export const dishes: Dish[] = [
         price: "€7.00",
         category: "Small Plates",
         description: "Pan-fried dumplings filled with juicy chicken and vegetables, served with ponzu sauce.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDv-L5F8ST6uiO_VSrCyhvTDsRPUD0Zn3TkFSvkskY73XewDhdRHMqao4kEEIpKxpRZWHyvCiSLZBR5MFReGREAL4EPkC5iOdge6YyDQmnRyrdL8uJJzTT1y6Be7mOo7jAVQq5hkZWSz_UeUrkARdmT53QLHZmXKnkd1ffWqsbYWe13i76JD3770rkw2LuZ2Siy7nRQRV7cr68FwsSMbusHIekgpQcvGXSjZ3ScImFRmYnM2Rk7t-KyUrRzdjH6-fvWFpltqHNh-9A3",
+        image: "/dishes/crispy-gyoza.jpg",
     },
 ];
 

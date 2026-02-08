@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Dish } from "@/lib/data";
 
 interface DishCardProps {
@@ -8,12 +9,13 @@ export default function DishCard({ dish }: DishCardProps) {
     return (
         <div className="min-w-[300px] md:min-w-[380px] snap-center bg-white dark:bg-white/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group border border-wood-light/50 dark:border-white/5 flex flex-col">
             <div className="aspect-[4/3] overflow-hidden relative">
-                <div
-                    className="w-full h-full bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
-                    style={{
-                        backgroundImage: `url('${dish.image}')`,
-                    }}
-                ></div>
+                <Image
+                    src={dish.image}
+                    alt={dish.name}
+                    fill
+                    className="object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    sizes="(max-width: 768px) 300px, 380px"
+                />
                 {dish.isPopular && (
                     <div className="absolute top-4 left-4 bg-background-dark/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
                         <span className="material-symbols-outlined text-[14px] text-primary">

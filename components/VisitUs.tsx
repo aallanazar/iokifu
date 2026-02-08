@@ -1,4 +1,5 @@
-import { openingHours, contactInfo, mapPreview } from "@/lib/data";
+import Image from "next/image";
+import { openingHours, contactInfo, mapPreview, socialLinks } from "@/lib/data";
 
 export default function VisitUs() {
     return (
@@ -108,6 +109,26 @@ export default function VisitUs() {
                                         {contactInfo.email}
                                     </span>
                                 </a>
+                            </div>
+                            <div className="flex gap-4 mt-6">
+                                {socialLinks.map((link) => (
+                                    <a
+                                        key={link.platform}
+                                        href={link.href}
+                                        className="size-8 rounded-full bg-wood-light/20 dark:bg-white/5 flex items-center justify-center hover:bg-primary hover:text-background-dark transition-colors"
+                                        aria-label={link.label}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Image
+                                            src={link.iconUrl}
+                                            alt={link.platform}
+                                            width={16}
+                                            height={16}
+                                            className="filter invert brightness-0 hover:invert-0"
+                                        />
+                                    </a>
+                                ))}
                             </div>
                         </div>
                         <div className="mt-auto">

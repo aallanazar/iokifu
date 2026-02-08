@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 # IOKI FU - Japanese Restaurant Website
-=======
-# Iokifu - Japanese Restaurant Website
 
 Iokifu is a premium, modern website designed for a Japanese restaurant. It features a stunning visual layout consistent with authentic Japanese aesthetics, highlighting culinary excellence and a serene dining atmosphere.
 
@@ -11,11 +8,9 @@ Iokifu is a premium, modern website designed for a Japanese restaurant. It featu
 - **Dynamic Hero Section**: Engaging visuals with high-quality imagery.
 - **Multilingual Support**: Built-in language switching capabilities.
 - **Modern Tech Stack**: Powered by Next.js, React, and Tailwind CSS.
->>>>>>> e9b28a1 (docs: update README with project description, features, and detailed setup instructions)
 
 A modern, responsive website for IOKI FU, an authentic Japanese Ramen & Matcha restaurant in Frankfurt.
 
-<<<<<<< HEAD
 🌐 **Live Demo**: [iokifu.vercel.app](https://iokifu.vercel.app)
 
 ## ✨ Features
@@ -56,7 +51,6 @@ A modern, responsive website for IOKI FU, an authentic Japanese Ramen & Matcha r
    
    Visit [http://localhost:3000](http://localhost:3000)
 
-## 📝 Scripts
 
 | Command | Description |
 |---------|-------------|
@@ -69,11 +63,6 @@ A modern, responsive website for IOKI FU, an authentic Japanese Ramen & Matcha r
 
 **Allanazar Aminov** - [@aallanazar](https://github.com/aallanazar)
 
-## 📄 License
-
-This project is private.
-=======
-### Prerequisites
 
 - Node.js (v18 or later)
 - npm, yarn, pnpm, or bun
@@ -82,7 +71,7 @@ This project is private.
 
 1.  **Clone the repository**:
     ```bash
-    git clone [repository-url]
+    git clone https://github.com/aallanazar/iokifu.git
     cd iokifu
     ```
 
@@ -105,4 +94,3 @@ This project is private.
 -   **Components**: Modular components located in the `components/` directory.
 -   **Pages**: Next.js App Router structure in the `app/` directory.
 
->>>>>>> e9b28a1 (docs: update README with project description, features, and detailed setup instructions)

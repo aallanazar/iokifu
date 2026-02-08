@@ -74,6 +74,17 @@ export default function Footer() {
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
                     <p>© {new Date().getFullYear()} IOKI FU Restaurant. {t("footer.rights")}</p>
+                    <div className="flex items-center gap-1.5 translate-y-[1px]">
+                        <span>{t("footer.developedBy")}</span>
+                        <Link
+                            href="https://github.com/aallanazar"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary-dark transition-colors font-bold tracking-tight bg-primary/5 px-2 py-0.5 rounded-md border border-primary/10"
+                        >
+                            aallanazar
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>

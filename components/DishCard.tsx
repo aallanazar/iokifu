@@ -32,6 +32,12 @@ export default function DishCard({ dish }: DishCardProps) {
                         Vegetarian
                     </div>
                 )}
+                <div className="absolute top-4 right-4 bg-green-600/90 backdrop-blur-sm text-white text-[10px] font-black px-2 py-0.5 rounded-sm flex items-center gap-1 border border-white/20 uppercase tracking-tighter">
+                    <span className="material-symbols-outlined text-[12px]">
+                        verified
+                    </span>{" "}
+                    Halal
+                </div>
             </div>
             <div className="p-6 flex flex-col flex-1">
                 <div className="flex justify-between items-start mb-2">

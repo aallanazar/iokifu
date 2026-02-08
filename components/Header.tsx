@@ -4,14 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/lib/data";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
-
-    const toggleTheme = () => {
-        document.documentElement.classList.toggle("dark");
-    };
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <header className="fixed top-0 w-full z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-wood-light/30 dark:border-white/5 transition-all duration-300">
@@ -37,8 +35,8 @@ export default function Header() {
                                 key={link.label}
                                 href={link.href}
                                 className={`text-sm font-bold transition-colors ${pathname === link.href
-                                        ? "text-primary"
-                                        : "text-text-main dark:text-text-on-dark hover:text-primary"
+                                    ? "text-primary"
+                                    : "text-text-main dark:text-text-on-dark hover:text-primary"
                                     }`}
                             >
                                 {link.label}
@@ -63,7 +61,7 @@ export default function Header() {
                             className="p-2 rounded-lg bg-surface-light dark:bg-surface-dark hover:bg-wood-light/50 dark:hover:bg-white/10 text-text-main dark:text-text-on-dark transition-all cursor-pointer border border-wood-light/20 dark:border-white/5"
                         >
                             <span className="material-symbols-outlined text-[20px]">
-                                light_mode
+                                {theme === "dark" ? "light_mode" : "dark_mode"}
                             </span>
                         </button>
 
@@ -90,8 +88,8 @@ export default function Header() {
                             href={link.href}
                             onClick={() => setIsMenuOpen(false)}
                             className={`text-lg font-bold transition-colors ${pathname === link.href
-                                    ? "text-primary"
-                                    : "text-text-main dark:text-text-on-dark"
+                                ? "text-primary"
+                                : "text-text-main dark:text-text-on-dark"
                                 }`}
                         >
                             {link.label}

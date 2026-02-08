@@ -122,9 +122,9 @@ export const openingHours: OpeningHour[] = [
 
 export const contactInfo: ContactInfo = {
     phone: "+49 69 12345678",
-    email: "hello@iokifu.de",
-    address: "Mainzer Landstraße 123",
-    zip: "60327",
+    email: "[EMAIL_ADDRESS]",
+    address: "Töngesgasse 4",
+    zip: "60311",
     city: "Frankfurt am Main",
 };
 
@@ -135,6 +135,7 @@ export const mapPreview = {
 export const aboutContent = {
     story: "Founded by a group of passionate chefs from Kyoto, Ioki Fu was born out of a desire to bring genuine Japanese hospitality and flavors to Frankfurt. Our noodles are hand-pulled daily, and our broths simmer for at least 12 hours to achieve the perfect depth of umami.",
     mission: "We believe that food is a bridge between cultures. Our mission is to provide an oasis of calm and culinary excellence in the heart of the city.",
+    halalPolicy: "We are proud to serve a 100% Halal menu. To maintain the purity of our kitchen, no pork and no alcohol are allowed on the premises.",
     values: [
         { title: "Authenticity", description: "Traditional recipes passed down through generations." },
         { title: "Quality", description: "Only the freshest, locally sourced ingredients where possible." },

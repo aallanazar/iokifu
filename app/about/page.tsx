@@ -24,6 +24,18 @@ export default function AboutPage() {
                                     &quot;{aboutContent.mission}&quot;
                                 </p>
                             </div>
+                            {/* Halal Policy */}
+                            <div className="p-6 bg-green-500/10 dark:bg-green-500/5 rounded-2xl border border-green-500/20 flex gap-4 items-start">
+                                <div className="text-green-600 dark:text-green-400 mt-1">
+                                    <span className="material-symbols-outlined text-[32px]">verified</span>
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-black text-green-700 dark:text-green-300 mb-1 uppercase tracking-wider">Halal Certified Kitchen</h3>
+                                    <p className="text-text-muted dark:text-gray-400 font-medium">
+                                        {aboutContent.halalPolicy}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

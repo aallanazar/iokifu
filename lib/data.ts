@@ -83,7 +83,7 @@ export const dishes: Dish[] = [
         name: "Spicy Miso Ramen",
         price: "€16.50",
         category: "Ramen",
-        description: "Rich pork broth with customized spicy miso paste, bamboo shoots, and soft-boiled egg.",
+        description: "Rich chicken broth with customized spicy miso paste, bamboo shoots, and soft-boiled egg.",
         image: "/dishes/spicy-miso-ramen.jpg",
         isPopular: true,
         isSpicy: true,

@@ -82,7 +82,7 @@ export default function Footer() {
                             rel="noopener noreferrer"
                             className="text-primary hover:text-primary-dark transition-colors font-bold tracking-tight bg-primary/5 px-2 py-0.5 rounded-md border border-primary/10"
                         >
-                            allanazar
+                            Allanazar Aminov
                         </Link>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { contactInfo, openingHours, socialLinks } from "@/lib/data";
 import { useLanguage } from "./LanguageProvider";
@@ -111,21 +112,23 @@ export default function VisitUs() {
                                 ))}
                             </div>
                         </div>
-                        <div className="mt-auto pt-4">
-                            <div
-                                className={`inline-flex items-center gap-2 px-3 py-1 ${isOpen
-                                    ? "bg-primary/10 text-primary-dark"
-                                    : "bg-red-500/10 text-red-500"
-                                    } text-xs font-bold rounded-full`}
-                            >
-                                <span
-                                    className={`w-2 h-2 rounded-full ${isOpen
-                                        ? "bg-primary animate-pulse"
-                                        : "bg-red-500"
-                                        }`}
-                                ></span>
-                                {isOpen ? t("visit.openNow") : t("visit.closed")}
-                            </div>
+                        <div className="mt-auto pt-4 min-h-[32px]">
+                            {mounted && (
+                                <div
+                                    className={`inline-flex items-center gap-2 px-3 py-1 ${isOpen
+                                        ? "bg-primary/10 text-primary-dark"
+                                        : "bg-red-500/10 text-red-500"
+                                        } text-xs font-bold rounded-full`}
+                                >
+                                    <span
+                                        className={`w-2 h-2 rounded-full ${isOpen
+                                            ? "bg-primary animate-pulse"
+                                            : "bg-red-500"
+                                            }`}
+                                    ></span>
+                                    {isOpen ? t("visit.openNow") : t("visit.closed")}
+                                </div>
+                            )}
                         </div>
                     </div>
                     {/* Contact Card */}

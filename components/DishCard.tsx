@@ -54,7 +54,7 @@ export default function DishCard({ dish }: DishCardProps) {
                     Halal
                 </div>
             </div>
-            <div className="p-6 flex flex-col flex-1">
+            <div className="p-6 pt-8 flex flex-col flex-1">
                 <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-bold text-text-main dark:text-white">
                         {dish.name}

@@ -58,20 +58,20 @@ export default function Header() {
                                 {link.label}
                             </Link>
                         ))}
-                        <span className="h-4 w-px bg-wood-light/50 dark:bg-white/10"></span>
-                        <button
-                            onClick={toggleLanguage}
-                            className={`text-sm font-bold text-text-main dark:text-text-on-dark hover:text-primary transition-colors cursor-pointer uppercase ${mounted ? "opacity-100" : "opacity-0"}`}
-                        >
-                            {mounted ? locale : "en"}
-                        </button>
                     </nav>
 
                     {/* Actions */}
                     <div className="flex items-center gap-3">
+                        <button
+                            onClick={toggleLanguage}
+                            className={`hidden sm:flex items-center justify-center size-10 rounded-lg bg-surface-light dark:bg-surface-dark border border-wood-light/20 dark:border-white/5 text-sm font-bold text-text-main dark:text-text-on-dark hover:text-primary transition-colors cursor-pointer uppercase ${mounted ? "opacity-100" : "opacity-0"}`}
+                        >
+                            {mounted ? locale : "en"}
+                        </button>
+
                         <Link
                             href="/book"
-                            className="hidden md:flex items-center justify-center h-10 px-5 bg-primary hover:bg-primary-dark text-background-dark font-bold text-sm rounded-lg transition-all shadow-primary hover:shadow-lg active:scale-95 cursor-pointer"
+                            className="hidden md:flex items-center justify-center h-10 min-w-[120px] px-5 bg-primary hover:bg-primary-dark text-background-dark font-bold text-sm rounded-lg transition-all shadow-primary hover:shadow-lg active:scale-95 cursor-pointer"
                         >
                             {t("nav.bookTable")}
                         </Link>
@@ -80,7 +80,7 @@ export default function Header() {
                         <button
                             aria-label="Toggle theme"
                             onClick={toggleTheme}
-                            className="p-2 rounded-lg bg-surface-light dark:bg-surface-dark hover:bg-wood-light/50 dark:hover:bg-white/10 text-text-main dark:text-text-on-dark transition-all cursor-pointer border border-wood-light/20 dark:border-white/5"
+                            className="p-2 size-10 flex items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark hover:bg-wood-light/50 dark:hover:bg-white/10 text-text-main dark:text-text-on-dark transition-all cursor-pointer border border-wood-light/20 dark:border-white/5"
                         >
                             <span className="material-symbols-outlined text-[20px]">
                                 {!mounted ? "dark_mode" : theme === "dark" ? "light_mode" : "dark_mode"}
@@ -104,12 +104,12 @@ export default function Header() {
             {/* Mobile Menu Overlay */}
             {isMenuOpen && (
                 <div className="md:hidden absolute top-20 left-0 w-full bg-background-light dark:bg-background-dark border-b border-wood-light/30 dark:border-white/5 p-6 flex flex-col gap-6 shadow-2xl animate-in slide-in-from-top duration-300">
-                    <div className="flex justify-between items-center px-2">
+                    <div className="flex md:hidden justify-center items-center px-2">
                         <button
                             onClick={toggleLanguage}
-                            className={`text-sm font-bold text-text-main dark:text-text-on-dark hover:text-primary transition-colors cursor-pointer uppercase ${mounted ? "opacity-100" : "opacity-0"}`}
+                            className={`flex items-center justify-center px-4 py-2 rounded-lg bg-surface-light dark:bg-surface-dark border border-wood-light/20 dark:border-white/5 text-sm font-bold text-text-main dark:text-text-on-dark hover:text-primary transition-colors cursor-pointer uppercase ${mounted ? "opacity-100" : "opacity-0"}`}
                         >
-                            {mounted ? locale : "en"}
+                            {mounted ? (locale === 'en' ? 'English' : 'Deutsch') : 'English'}
                         </button>
                     </div>
                     {translatedNavLinks.map((link) => (

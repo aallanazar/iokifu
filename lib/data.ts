@@ -43,9 +43,9 @@ export const navLinks: NavLink[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-    { platform: "Instagram", href: "https://instagram.com", iconUrl: "/instagram.svg", label: "Instagram" },
-    { platform: "Facebook", href: "https://facebook.com", iconUrl: "/facebook.svg", label: "Facebook" },
-    { platform: "Twitter", href: "https://twitter.com", iconUrl: "/twitter.svg", label: "Twitter" },
+    { platform: "Instagram", href: "https://www.instagram.com/iokifu/", iconUrl: "/instagram.svg", label: "Instagram" },
+    { platform: "Facebook", href: "https://www.facebook.com/people/IOKI-FU-Ramen-Wok-Matcha/61583912955976/", iconUrl: "/facebook.svg", label: "Facebook" },
+    { platform: "Find Me Gluten Free", href: "https://www.findmeglutenfree.com/biz/ioki-fu/6345988594073600", iconUrl: "/globe.svg", label: "Find Me Gluten Free" },
 ];
 
 export const heroContent = {
@@ -123,7 +123,7 @@ export const openingHours: OpeningHour[] = [
 
 export const contactInfo: ContactInfo = {
     phone: "+49 69 12345678",
-    email: "[EMAIL_ADDRESS]",
+    email: "info@iokifu.de",
     address: "Töngesgasse 4",
     zip: "60311",
     city: "Frankfurt am Main",

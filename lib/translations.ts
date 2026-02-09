@@ -118,6 +118,12 @@ export const translations = {
                 { title: "2. Reservations and Cancellations", content: "Reservations are binding. We kindly ask you to inform us as early as possible if you cannot keep a reservation. We reserve the right to charge a no-show fee for large groups." },
                 { title: "3. Liability", content: "IOKI FU Restaurant is not liable for items brought by guests." }
             ]
+        },
+        book: {
+            comingSoon: "Coming Soon",
+            subtitle: "Our online reservation system is under construction.",
+            japaneseText: "近日公開",
+            backToHome: "Back to Home",
         }
     },
     de: {
@@ -237,6 +243,12 @@ export const translations = {
                 { title: "2. Reservierungen und Stornierungen", content: "Reservierungen sind verbindlich. Wir bitten Sie, uns so früh wie möglich zu informieren, wenn Sie eine Reservierung nicht wahrnehmen können. Bei großen Gruppen behalten wir uns das Recht vor, eine No-Show-Gebühr zu erheben." },
                 { title: "3. Haftung", content: "Das IOKI FU Restaurant haftet nicht für von Gästen mitgebrachte Gegenstände." }
             ]
+        },
+        book: {
+            comingSoon: "Demnächst verfügbar",
+            subtitle: "Unser Online-Reservierungssystem befindet sich im Aufbau.",
+            japaneseText: "近日公開",
+            backToHome: "Zurück zur Startseite",
         }
     }
 };
